@@ -1,4 +1,4 @@
 package Users;
 
-public class RedGmbh {
+public class RedGmbh extends Company{
 }

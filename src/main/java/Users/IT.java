@@ -1,4 +1,7 @@
 package Users;
 
-public class IT {
+public class IT extends Departement{
+
+    String name = "IT";
+
 }

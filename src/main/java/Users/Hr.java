@@ -1,4 +1,7 @@
 package Users;
 
-public class Hr {
+public class Hr extends Departement{
+
+    String name = "Human Resources";
+
 }
