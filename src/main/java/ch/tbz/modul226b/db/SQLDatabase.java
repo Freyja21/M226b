@@ -184,8 +184,8 @@ public class SQLDatabase implements DatabaseInterface {
         if (rs.next()) {
             switch (rs.getString(2)) {
                 case "hr" -> departement = new Hr(rs.getString(1), rs.getString(2));
-                case "it" -> departement = new IT(rs.getString(1), rs.getString(2));
-                case "production" -> departement = new Production(rs.getString(1), rs.getString(2));
+                case "IT" -> departement = new IT(rs.getString(1), rs.getString(2));
+                case "Production" -> departement = new Production(rs.getString(1), rs.getString(2));
             }
         }
         rs.close();

@@ -13,18 +13,22 @@ public class Menu {
     private SQLDatabase sqlDatabase =  null;
     private Scanner s = new Scanner(System.in);
 
+
     private void useSelected(int selected) {
         try {
             sqlDatabase = new SQLDatabase();
             switch (selected) {
                 case 1 -> {
                     // user
+                    String firstName;
+                    String lastName;
+                    String email;
                     System.out.println("what is your first name?");
-                    String firstName =s.nextLine();
+                     firstName =s.nextLine();
                     System.out.println("what is your last name");
-                    String lastName = s.nextLine();
+                     lastName = s.nextLine();
                     System.out.println("what is your email?");
-                    String email = s.nextLine();
+                     email = s.nextLine();
 
 
                     // company
