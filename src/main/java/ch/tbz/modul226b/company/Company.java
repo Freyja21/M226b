@@ -20,7 +20,14 @@ public class Company {
     @Getter
     @Setter
     Boolean headquater;
-    
+
+    /**
+     *
+     * @param id
+     * @param name
+     * @param location
+     * @param headquater
+     */
     public Company(String id, String name, String location, boolean headquater){
         this.id = id;
         this.name = name;

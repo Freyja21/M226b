@@ -27,7 +27,13 @@ public class Account {
     @Setter
     private Company workingInCompany;
 
-
+    /**
+     *
+     * @param id
+     * @param userInfo
+     * @param workingInCompany
+     * @param workingInDepartement
+     */
     public Account(String id, User userInfo, Company workingInCompany, Departement workingInDepartement) {
         this.id = id;
         this.userInfo = userInfo;

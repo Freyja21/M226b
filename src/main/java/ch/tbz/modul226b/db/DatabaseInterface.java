@@ -8,7 +8,12 @@ import ch.tbz.modul226b.user.User;
 
 public interface DatabaseInterface {
 
-
+    /**
+     *
+     * @param table
+     * @param user
+     * @throws Exception
+     */
     public void saveUser(String table, User user) throws Exception;
     public User loadUser(String id) throws  Exception;
     public void saveCompany(String table, Company company) throws Exception;

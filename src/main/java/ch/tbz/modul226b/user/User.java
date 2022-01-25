@@ -24,6 +24,12 @@ public class User {
 
     private String email;
 
+    /**
+     * @param id
+     * @param firstName
+     * @param lastName
+     * @param email
+     */
     public User(String id, String firstName, String lastName, String email) {
         this.id = id;
         this.firstName = firstName;

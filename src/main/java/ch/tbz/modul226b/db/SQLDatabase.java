@@ -16,7 +16,10 @@ public class SQLDatabase implements DatabaseInterface {
 
     private Connection connection = null;
 
-
+    /**
+     *
+     * @return
+     */
     public static SQLDatabase getInstance() {
         if (instance == null) {
             instance = new SQLDatabase();
@@ -27,6 +30,7 @@ public class SQLDatabase implements DatabaseInterface {
     private static SQLDatabase instance;
 
     public void connect() {
+
         try {
             connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/modul226b", "root", "");
         } catch (Exception e) {
@@ -35,9 +39,15 @@ public class SQLDatabase implements DatabaseInterface {
 
     }
 
-
+    /**
+     *
+     * @param table
+     * @param user
+     * @throws Exception
+     */
     @Override
     public void saveUser(String table, User user) throws Exception {
+        //SQL commands for saving the Useraccount
         if (connection == null) connect();
         String WRITE_OBJECT_SQL = "";
         PreparedStatement statement;
@@ -72,6 +82,13 @@ public class SQLDatabase implements DatabaseInterface {
 
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     * @throws Exception
+     */
+    //Gets userinfos from
     @Override
     public User loadUser(String id) throws Exception {
         if (connection == null) connect();
@@ -88,6 +105,13 @@ public class SQLDatabase implements DatabaseInterface {
         return user;
     }
 
+    /**
+     *
+     * @param table
+     * @param company
+     * @throws Exception
+     */
+    //Saves data for companyinfo in table company
     @Override
     public void saveCompany(String table, Company company) throws Exception {
         if (connection == null) connect();
@@ -125,6 +149,13 @@ public class SQLDatabase implements DatabaseInterface {
         connection.commit();
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     * @throws Exception
+     */
+    //load infos  for company
     @Override
     public Company loadCompany(String id) throws Exception {
         if (connection == null) connect();
@@ -141,6 +172,13 @@ public class SQLDatabase implements DatabaseInterface {
         return company;
     }
 
+    /**
+     *
+     * @param table
+     * @param departement
+     * @throws Exception
+     */
+    // save infos for departement
     @Override
     public void saveDepartement(String table, Departement departement) throws Exception {
         if (connection == null) connect();
@@ -173,6 +211,13 @@ public class SQLDatabase implements DatabaseInterface {
         connection.commit();
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     * @throws Exception
+     */
+    //load departement infos
     @Override
     public Departement loadDepartement(String id) throws Exception {
         if (connection == null) connect();
@@ -193,7 +238,13 @@ public class SQLDatabase implements DatabaseInterface {
         return departement;
     }
 
-
+    /**
+     *
+     * @param table
+     * @param account
+     * @throws Exception
+     */
+    //save Accountinfo in table account
     @Override
     public void saveAccount(String table, Account account) throws Exception {
         if (connection == null) connect();
@@ -235,6 +286,7 @@ public class SQLDatabase implements DatabaseInterface {
      * @return
      * @throws Exception
      */
+    //load account infos
     @Override
     public Account loadAccount(String id) throws Exception {
         if (connection == null) connect();
@@ -250,6 +302,13 @@ public class SQLDatabase implements DatabaseInterface {
         pstmt.close();
         return account;
     }
+
+    /**
+     *
+     * @return
+     * @throws Exception
+     */
+    //load account infos
     public List<Account> loadAccounts() throws  Exception{
         if (connection == null) connect();
 
@@ -263,6 +322,12 @@ public class SQLDatabase implements DatabaseInterface {
         return accounts;
     }
 
+    /**
+     *
+     * @param id
+     * @throws Exception
+     */
+    // for future oportunities for deleting accounts
     @Override
     public void delete(String id) throws Exception {
         if (connection == null) connect();
